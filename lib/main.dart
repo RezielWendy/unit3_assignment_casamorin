@@ -48,7 +48,7 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen>
     FilePickerResult? result =
         await FilePicker.platform.pickFiles(type: FileType.audio);
     if (result != null) {
-      await _audioPlayer.stop(); // Stop any currently playing audio
+      await _audioPlayer.stop(); 
       setState(() {
         _filePath = result.files.single.path;
         _urlController.clear();
@@ -60,7 +60,7 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen>
 
   void _playFromUrl() async {
     if (_urlController.text.isEmpty) return;
-    await _audioPlayer.stop(); // Stop any currently playing audio
+    await _audioPlayer.stop(); 
     await _audioPlayer.play(UrlSource(_urlController.text));
     setState(() {
       isPlaying = true;
